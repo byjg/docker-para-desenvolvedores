@@ -64,7 +64,7 @@ sudo su - root
 Agora execute o comando abaixo:
 
 ```
-curl -L https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+curl -L https://github.com/docker/compose/releases/download/1.8.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 ```
 Para testar execute o comando abaixo:
@@ -97,7 +97,7 @@ sudo su - root
 Agora execute o comando abaixo:
 
 ```
-$ curl -L https://github.com/docker/machine/releases/download/v0.7.0/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine && \
+$ curl -L https://github.com/docker/machine/releases/download/v0.8.2/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine && \
 chmod +x /usr/local/bin/docker-machine
 ```
 Para testar execute o comando abaixo:
@@ -107,6 +107,28 @@ docker-machine version
 ```
 
 Obs.: O exemplo anterior utiliza a versão mais recente no momento desta publicação. Verifique se há alguma versão mais atualizada consultando a [documentação oficial](https://docs.docker.com/machine/install-machine/).
+
+### Rodando o Docker sem ser super usuário
+
+- Crie o grupo Docker se não existir
+
+```
+sudo groupadd docker
+```
+
+- Adicione o usuário conectado "${USER}" ao grupo do docker:
+
+```
+sudo gpasswd -a ${USER} docker
+```
+
+- Reinicie o daemon do Docker:
+
+```
+sudo service docker restart
+```
+
+- Execute `newgrp docker` ou faça  or log out/in para ativar as mudanças
 
 ## Instalando no MacOS
 
