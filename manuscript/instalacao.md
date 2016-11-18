@@ -110,6 +110,9 @@ Obs.: O exemplo anterior utiliza a versão mais recente no momento desta publica
 
 ### Rodando o Docker sem ser super usuário
 
+Para que você rode o Docker sem ser um super usuário utilize os passos abaixo. **Importante:** Isso causa uma vulnerabilidade no docker que pode ser descrita [aqui](https://fosterelli.co/privilege-escalation-via-docker.html)
+
+
 - Crie o grupo Docker se não existir
 
 ```
