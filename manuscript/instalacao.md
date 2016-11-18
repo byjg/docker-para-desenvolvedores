@@ -67,6 +67,13 @@ Agora execute o comando abaixo:
 curl -L https://github.com/docker/compose/releases/download/1.8.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 ```
+
+Se tiver utilizando Debian/Ubuntu pode adicionar o auto-complete para o docker-composer:
+
+```
+wget https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose -O /etc/bash_completion.d/docker-compose
+```
+
 Para testar execute o comando abaixo:
 
 ```
